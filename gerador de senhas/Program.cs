@@ -6,6 +6,9 @@ while(true)
 {
     if(int.TryParse(Console.ReadLine(), out int qnt))
     {
+        Console.WriteLine("Deseja colocar caractere especial? ");
+        string verif = Console.ReadLine();
+        
         for(int i=0; i<qnt;i++)
         {
         string index;
