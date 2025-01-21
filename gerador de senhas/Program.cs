@@ -36,7 +36,8 @@ while(true)
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Write(indexspecial);
-            escrever.WriteLine(indexspecial);
+            escrever.Write("abc");
+            escrever.Close();
             Console.ResetColor();
             
             }
@@ -59,6 +60,7 @@ while(true)
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
                 escrever.WriteLine(index);
+                escrever.Close();
                 Console.ResetColor();
                 
                 
@@ -86,6 +88,7 @@ while(true)
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
                 escrever.WriteLine(index);
+                escrever.Close();
                 Console.ResetColor();
             }
         }
