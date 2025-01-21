@@ -1,5 +1,6 @@
 ﻿
 using System.Reflection.PortableExecutable;
+
 StreamWriter escrever = new StreamWriter("C:\\Users\\Aluno\\Pictures\\Revisao2024\\gerador de senhas\\Senha.txt");
 
 var Random = new Random();
@@ -36,11 +37,12 @@ while(true)
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Write(indexspecial);
-            escrever.Write("abc");
-            escrever.Close();
+            escrever.Write(indexspecial);
+            
             Console.ResetColor();
             
             }
+           
 
             // Console.WriteLine("result: " + result);
 
@@ -59,15 +61,15 @@ while(true)
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
-                escrever.WriteLine(index);
-                escrever.Close();
+                escrever.Write(index);
+                
                 Console.ResetColor();
                 
                 
                 
             }
             
-            
+            escrever.Close();
         } 
 
         else
@@ -87,11 +89,13 @@ while(true)
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
-                escrever.WriteLine(index);
-                escrever.Close();
+                escrever.Write(index);
+                
                 Console.ResetColor();
             }
+            escrever.Close();
         }
+        
             
         
     break;
