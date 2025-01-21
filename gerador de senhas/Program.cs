@@ -1,6 +1,7 @@
 ﻿
 using System.Reflection.PortableExecutable;
-string valor;
+StreamWriter escrever = new StreamWriter("C:\\Users\\Aluno\\Pictures\\Revisao2024\\gerador de senhas\\Senha.txt");
+
 var Random = new Random();
 Console.WriteLine("informe a quantidade de caracter que você deseja");
 while(true)
@@ -18,9 +19,9 @@ while(true)
         int result= qnt-qntespecial;
     
         
-            for(int i=0; i<=result;i++)
+            for(int i=1; i<=qntespecial;i++)
             {
-
+                // Console.WriteLine(i);
             
 
             string indexspecial;
@@ -35,6 +36,7 @@ while(true)
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Write(indexspecial);
+            escrever.WriteLine(indexspecial);
             Console.ResetColor();
             
             }
@@ -56,6 +58,7 @@ while(true)
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
+                escrever.WriteLine(index);
                 Console.ResetColor();
                 
                 
@@ -82,6 +85,7 @@ while(true)
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
+                escrever.WriteLine(index);
                 Console.ResetColor();
             }
         }
