@@ -32,8 +32,11 @@ while(true)
             var randomspecialindex = Random.Next(CaracterEspecial.Length);
             indexspecial= CaracterEspecial[randomspecialindex];
             
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Write(indexspecial);
-            valor=indexspecial;
+            Console.ResetColor();
+            
             }
 
             // Console.WriteLine("result: " + result);
@@ -49,7 +52,11 @@ while(true)
 
                 var randomIndex = Random.Next(Caractere.Length);
                 index = Caractere[randomIndex];
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
+                Console.ResetColor();
                 
                 
                 
@@ -72,7 +79,10 @@ while(true)
                 var randomIndex = Random.Next(Caractere.Length);
                 index = Caractere[randomIndex];
 
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.Write(index);
+                Console.ResetColor();
             }
         }
             
