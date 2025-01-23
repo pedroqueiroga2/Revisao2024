@@ -34,6 +34,7 @@ while (true)
         if (verif == "s")
         {
            
+           
             Console.WriteLine("Deseja colocar quantos caractere especiais? ");
              Return:
             int.TryParse(Console.ReadLine(), out int qntespecial);
