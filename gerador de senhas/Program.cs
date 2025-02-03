@@ -31,7 +31,7 @@ while (true)
     {
         Console.WriteLine("Deseja colocar caractere especial? ");
         string verif = Console.ReadLine().ToLower();
-        if (verif == "s" && verif == "sim")
+        if (verif == "s" || verif == "sim")
         {
 
 
