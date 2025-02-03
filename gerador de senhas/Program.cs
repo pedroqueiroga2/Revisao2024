@@ -33,10 +33,10 @@ while (true)
         string verif = Console.ReadLine().ToLower();
         if (verif == "s" && verif == "sim")
         {
-           
-           
+
+
             Console.WriteLine("Deseja colocar quantos caractere especiais? ");
-             Return:
+        Return:
             int.TryParse(Console.ReadLine(), out int qntespecial);
 
 
@@ -132,7 +132,12 @@ while (true)
     }
     else
     {
-        Console.WriteLine("informe um valor válido");
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("error");
+        Console.ResetColor();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Informe um valor válido");
+        Console.ResetColor();
     }
 }
 
