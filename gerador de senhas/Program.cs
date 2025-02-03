@@ -1,6 +1,6 @@
 ﻿
 using System.Reflection.PortableExecutable;
-string filePath = "C:\\Users\\Alunos\\3D Objects\\Revisao2024\\gerador de senhas\\Senha.txt";
+string filePath = "C:\\Users\\Alunos\\OneDrive\\Documentos\\Nada_Oculto_permance\\Git_clones\\Revisao2024_pedro\\gerador de senhas\\Senha.txt";
 
 var Random = new Random();
 
@@ -30,8 +30,8 @@ while (true)
     if (int.TryParse(Console.ReadLine(), out int qnt))
     {
         Console.WriteLine("Deseja colocar caractere especial? ");
-        string verif = Console.ReadLine();
-        if (verif == "s")
+        string verif = Console.ReadLine().ToLower();
+        if (verif == "s" && verif == "sim")
         {
            
            
