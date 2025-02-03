@@ -136,8 +136,11 @@ while (true)
         Console.WriteLine("error");
         Console.ResetColor();
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Informe um valor válido");
+        Console.WriteLine("Pressione Enter para continuar!");
         Console.ResetColor();
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Informe um valor válido");
     }
 }
 
