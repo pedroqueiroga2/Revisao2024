@@ -1,8 +1,11 @@
 ﻿
 using System.Reflection.PortableExecutable;
-string filePath = "C:\\Users\\Alunos\\3D Objects\\Revisao2024\\gerador de senhas\\Senha.txt";
+string filePath = "C:\\Users\\Alunos\\OneDrive\\Documentos\\Nada_Oculto_permance\\Git_clones\\Revisao2024_pedro\\gerador de senhas\\Senha.txt";
 
 var Random = new Random();
+int caracter_limite = 0;
+int caracter_especial_limite = 0;
+int restricao_aleatorio;
 
 if (!File.Exists(filePath))
 {
@@ -30,13 +33,13 @@ while (true)
     if (int.TryParse(Console.ReadLine(), out int qnt))
     {
         Console.WriteLine("Deseja colocar caractere especial? ");
-        string verif = Console.ReadLine();
-        if (verif == "s")
+        string verif = Console.ReadLine().ToLower();
+        if (verif == "s" || verif == "sim")
         {
-           
-           
+
+
             Console.WriteLine("Deseja colocar quantos caractere especiais? ");
-             Return:
+        Return:
             int.TryParse(Console.ReadLine(), out int qntespecial);
 
 
@@ -54,46 +57,94 @@ while (true)
             else
             {
                 int result = qnt - qntespecial;
-
-                using (StreamWriter escrever = new StreamWriter(filePath, true)) // Abre o arquivo para escrita
-                {
-                    escrever.WriteLine();
-                    // Adiciona caracteres especiais
-                    for (int i = 1; i <= qntespecial; i++)
-                    {
-                        string[] caracteresEspeciais = {
+                string[] caracteresEspeciais = {
                             "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+",
                             "[", "{", "]", "}", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "`", "~"
                         };
-
-                        var randomSpecialIndex = new Random().Next(caracteresEspeciais.Length);
-                        string indexSpecial = caracteresEspeciais[randomSpecialIndex];
-
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.Write(indexSpecial);
-                        escrever.Write(indexSpecial);
-                        Console.ResetColor();
-                    }
-
-                    // Adiciona letras e números
-                    for (int j = 1; j <= result; j++)
-                    {
-                        string[] caracteres = {
+                string[] caracteres = {
                             "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
                             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
                             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
                         };
 
-                        var randomIndex = new Random().Next(caracteres.Length);
-                        string index = caracteres[randomIndex];
+                using (StreamWriter escrever = new StreamWriter(filePath, true)) // Abre o arquivo para escrita
+                {
 
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.Write(index);
-                        escrever.Write(index);
-                        Console.ResetColor();
+                    escrever.WriteLine();
+                    for (int i = 0; i < qnt; i++)
+                    {
+                        Return_teste:
+                        restricao_aleatorio = Random.Next(0, 2);
+                        if ((caracter_limite == result) && restricao_aleatorio == 1 || (caracter_especial_limite == qntespecial) && restricao_aleatorio == 0){
+                            goto Return_teste;
+                        }
+                            
+
+                        switch (restricao_aleatorio)
+                        {
+                            case 0:
+                                var randomSpecialIndex = new Random().Next(caracteresEspeciais.Length);
+                                string indexSpecial = caracteresEspeciais[randomSpecialIndex];
+
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.BackgroundColor = ConsoleColor.Black;
+                                Console.Write(indexSpecial);
+                                escrever.Write(indexSpecial);
+                                Console.ResetColor();
+                                caracter_especial_limite++;
+                                break;
+                            case 1:
+                                var randomIndex = new Random().Next(caracteres.Length);
+                                string index = caracteres[randomIndex];
+
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.BackgroundColor = ConsoleColor.Black;
+                                Console.Write(index);
+                                escrever.Write(index);
+                                Console.ResetColor();
+                                caracter_limite++;
+                                break;
+                        }
+
                     }
+
+                    // escrever.WriteLine();
+                    // // Adiciona caracteres especiais
+                    // for (int i = 1; i <= qntespecial; i++)
+                    // {
+                    //     string[] caracteresEspeciais = {
+                    //         "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+",
+                    //         "[", "{", "]", "}", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "`", "~"
+                    //     };
+
+                    //     var randomSpecialIndex = new Random().Next(caracteresEspeciais.Length);
+                    //     string indexSpecial = caracteresEspeciais[randomSpecialIndex];
+
+                    //     Console.ForegroundColor = ConsoleColor.Green;
+                    //     Console.BackgroundColor = ConsoleColor.Black;
+                    //     Console.Write(indexSpecial);
+                    //     escrever.Write(indexSpecial);
+                    //     Console.ResetColor();
+                    // }
+
+                    // // Adiciona letras e números
+                    // for (int j = 1; j <= result; j++)
+                    // {
+                    //     string[] caracteres = {
+                    //         "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+                    //         "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                    //         "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+                    //     };
+
+                    //     var randomIndex = new Random().Next(caracteres.Length);
+                    //     string index = caracteres[randomIndex];
+
+                    //     Console.ForegroundColor = ConsoleColor.Green;
+                    //     Console.BackgroundColor = ConsoleColor.Black;
+                    //     Console.Write(index);
+                    //     escrever.Write(index);
+                    //     Console.ResetColor();
+                    // }
                 }
             }
 
@@ -132,7 +183,15 @@ while (true)
     }
     else
     {
-        Console.WriteLine("informe um valor válido");
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("error");
+        Console.ResetColor();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Pressione Enter para continuar!");
+        Console.ResetColor();
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Informe um valor válido");
     }
 }
 
