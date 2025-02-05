@@ -11,6 +11,10 @@ namespace Menu
             Console.WriteLine("*");
             return opcao = Console.ReadLine();
         }
+        public static void calcular(int x, int y)
+        {
+            Console.WriteLine($"{x} + {y} = {x+y}");
+        }
         
     }
 }
