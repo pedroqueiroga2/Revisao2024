@@ -5,6 +5,7 @@ namespace Menu
         public static string ImprimirMenu()
         {
             string opcao = "";
+            Console.WriteLine("Escolha qual operação você deseja fazer");
             Console.WriteLine("+");
             Console.WriteLine("-");
             Console.WriteLine("/");
@@ -15,22 +16,35 @@ namespace Menu
         {
             while (true)
             {
-                if (decimal.TryParse(Console.ReadLine(), out decimal x))
+                if (!decimal.TryParse(Console.ReadLine(), out decimal x))
                 {
-                    return x;
-                    break;
+                    Console.WriteLine("Valor inválido");
+                    
                 }
                 else
                 {
-                    Console.WriteLine("Valor inválido");
+                    return x;
+                    break;
                     
                 }
             }
         }
 
-        public static void calcular(decimal x, decimal y)
+        public static void adicao(decimal x, decimal y)
         {
             Console.WriteLine($"{x} + {y} = {x + y}");
+        }
+        public static void subtracao(decimal x, decimal y)
+        {
+            Console.WriteLine($"{x} - {y} = {x - y}");
+        }
+        public static void divisão(decimal x, decimal y)
+        {
+            Console.WriteLine($"{x} / {y} = {x / y}");
+        }
+        public static void multiplicacao(decimal x, decimal y)
+        {
+            Console.WriteLine($"{x} x {y} = {x * y}");
         }
 
 
