@@ -24,4 +24,5 @@ switch(opcao)
     break;
     
 }
-
+string mensagem = "";
+Calculadora.Mensagem(mensagem);
